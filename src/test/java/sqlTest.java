@@ -14,7 +14,7 @@ public class sqlTest extends BaseTest {
         logger.info("Test is started!");
 
         Customers customers = new Customers(jdbcService);
-        customers.addCustomer("Natasha", "Duk", "nata@mail", 39);
+        customers.addCustomer("Ivan", "Ivanov", "ivan@mail", 44);
 
         ResultSet rs = jdbcService.executeQuery(sql);
 
@@ -40,7 +40,7 @@ public class sqlTest extends BaseTest {
     @Test(dependsOnMethods = "addCustomers")
     public void updateCustomers() {
         Customers customers = new Customers(jdbcService);
-        customers.updateCustomer("Nechiporenko");
+        customers.updateCustomer("Petrov");
 
         ResultSet rs = jdbcService.executeQuery(sql);
 
@@ -80,7 +80,7 @@ public class sqlTest extends BaseTest {
                 logger.info("firstname : " + firstname);
                 logger.info("lastname : " + lastname);
                 logger.info("email : " + email);
-                logger.info("age : " + age);//logger.info("The Customer was deleted!");
+                logger.info("age : " + age);
             }
         } catch (SQLException ex) {
             logger.error(ex.getMessage());
